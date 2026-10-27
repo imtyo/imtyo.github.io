@@ -12,8 +12,12 @@
 
   <script>
     setTimeout(function () {
-      location.replace("https://imtyo.vercel.app");
+      location.replace("https://imtyo.vercel.app/?" + encodeURIComponent(location.pathname));
     }, 800);
+    window.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("redirect-link").href =
+        "https://imtyo.vercel.app/?" + encodeURIComponent(location.pathname);
+    });
   </script>
   <style>
     body { font-family: system-ui, sans-serif; display: grid; place-items: center;
@@ -22,6 +26,6 @@
 </head>
 <body>
   <p>Redirecting to imtyo.app...<br>
-     <a href="https://imtyo.vercel.app">Click here</a> if you’re not redirected automatically.</p>
+     <a id="redirect-link" href="https://imtyo.vercel.app">Click here</a> if you’re not redirected automatically.</p>
 </body>
 </html>
