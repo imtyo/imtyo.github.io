@@ -10,9 +10,13 @@
           async src="//gc.zgo.at/count.js"></script>
 
   <script>
-    
     setTimeout(function () {
-      location.replace("https://imtyo.vercel.app");
+      location.replace("https://imtyo.vercel.app/?" + encodeURIComponent(location.pathname));
+    }, 800);
+    window.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("redirect-link").href =
+        "https://imtyo.vercel.app/?" + encodeURIComponent(location.pathname);
+    });
     }, 800);
   </script>
   <style>
@@ -22,6 +26,6 @@
 </head>
 <body>
   <p>Mengalihkan ke situs utama...<br>
-     <a href="https://imtyo.vercel.app">Klik di sini</a> jika tidak otomatis.</p>
+     <a id="redirect-link" href="https://imtyo.vercel.app">Klik di sini</a> jika tidak otomatis.</p>
 </body>
 </html>
